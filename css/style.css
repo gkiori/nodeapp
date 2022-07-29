@@ -1,0 +1,10 @@
+body {
+    background-image: url('../images/beauBG.jpg');
+    background-size:cover;
+  }
+
+  .centered {
+    position: fixed; /* or absolute */
+    top: 30%;
+    left: 30%;
+  }
