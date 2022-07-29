@@ -1,16 +1,13 @@
 FROM node:latest
 
-WORKDIR .
+WORKDIR /app
 
-COPY package.json /app/apackage.json
+COPY package.json .
 
-RUN cd /app && npm install
+RUN npm install
 
-COPY . /app/
+COPY . .
 
 EXPOSE 8282
 
-WORKDIR /app
-
-CMD ["npm", "start"]
 CMD ["node", "adhmed.js"]
