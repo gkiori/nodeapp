@@ -17,3 +17,5 @@ apiRouter.route('/connectedName')
 .get( function(req , res , next ) {
     res.send(name);
 });
+
+export default { apiRouter };
