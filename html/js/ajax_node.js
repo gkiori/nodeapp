@@ -1,9 +1,8 @@
 function callbackAfterPost() {
-    let name;
     makeAjaxGetRequest("../api-node/connectedName", function (data) {
-        name = JSON.parse(data);
+        console.log("cb", data.name);
+        document.getElementById("textSortie").innerHTML = "<h2>Bonjour " + data.name + " ... Vous êtes bien matinal </h2>"
     } )
-    document.getElementById("textSortie").innerHTML = "<h2>Bonjour " + name + " ... Vous êtes bien matinal </h2>"
 }
 
 function formulaire() {
