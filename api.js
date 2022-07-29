@@ -3,17 +3,18 @@ import express from 'express' ;
 
 const apiRouter = express.Router();
 
-var name;
+let name = "";
 
-// http://localhost:8282/name' en mode post
-apiRouter.route('/name')
+// http://localhost:8282/api-node/name' en mode post
+apiRouter.route('/api-node/name')
 .post( function(req , res , next ) {
     name = req.body;
+    console.log(name);
     res.send(name);
 });
 
-// exemple URL: http://localhost:8282/connectedName
-apiRouter.route('/connectedName')
+// exemple URL: http://localhost:8282/api-node/connectedName
+apiRouter.route('/api-node/connectedName')
 .get( function(req , res , next ) {
     res.send(name);
 });

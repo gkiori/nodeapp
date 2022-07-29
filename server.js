@@ -1,5 +1,5 @@
 import express from 'express';
-
+import api from "./api.js";
 import {dirname} from 'path';
 import {fileURLToPath} from 'url';
 
@@ -15,6 +15,7 @@ app.get('/', function (req, res) {
     res.redirect('/html/index.html');
 });
 
+app.use(api.apiRouter);
 
 app.listen(8282, function () {
     console.log("http://localhost:8282");
