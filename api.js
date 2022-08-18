@@ -22,9 +22,6 @@ apiRouter.route('/api-node/connectedName')
 .get( function(req , res , next ) {
     res.send(nameTemp);
 });
-
-
-
 */
 
 export default { apiRouter };

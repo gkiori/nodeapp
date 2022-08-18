@@ -12,7 +12,7 @@ app.use(jsonParser);
 app.use('/html', express.static(__dirname + "/html"));
 
 app.get('/', function (req, res) {
-    res.redirect('/html/index.html');
+    res.redirect('/html/formulaire.html');
 });
 
 app.use(api.apiRouter);

@@ -1,18 +1,22 @@
 <html>
 <head>
-   <title>Notre App</title> 
+   <title>Notre App</title>
+	<script src="js/my_ajax_util.js"></script>
+	<script src="js/ajax_node.js"></script>
 </head>
 <body>
 	<h1>Node App</h1>
-	<form method="GET" action="#" enctype="multipart/form-data">
+	<form action="#" enctype="multipart/form-data">
 		<fieldset><legend >Entrez votre nom</legend>
 			<label>nom:</label> 
-		<input type="text" name="nom" size="48"
+		<input id="nameInput" type="text" name="nom" size="48"
 					placeholder="nom requis avec Majuscule au debut" 
 					pattern="[A-Z].+"	required /> <br/>
 		</fieldset>
 		
-		<input type="submit" value="envoyer" />
+		<input type="button" value="envoyer" onclick="formulaire()" />
 	</form>
+
+	<div id="textSortie"></div>
 </body>
 </html>

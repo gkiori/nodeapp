@@ -1,16 +1,13 @@
-FROM node:latest
-
-WORKDIR .
-
-COPY package.json /app/apackage.json
-
-RUN cd /app && npm install
-
-COPY . /app/
-
-EXPOSE 8282
+FROM node:18-alpine3.15
 
 WORKDIR /app
 
-CMD ["npm", "start"]
-CMD ["node", "adhmed.js"]
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 8282
+
+CMD ["node", "ahmed.js"]
