@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent any
 
     stages {
         stage('Build') {
@@ -21,7 +21,6 @@ pipeline {
             }
         }
         stage('Image Build') {
-            agent { docker 'docker:dind' }
             steps {
                 echo 'Image in building....'
                 // 1- build une image
