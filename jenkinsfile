@@ -1,0 +1,37 @@
+pipeline {
+    agent none
+
+    stages {
+        stage('Build') {
+            agent  { docker 'node:latest' }
+            steps {
+                /* echo 'Building..'
+                echo 'Hello, NodeApp' */
+                sh 'node --version'
+                sh 'npm --version'
+                sh 'npm install -save-dev mocha && npm install'
+            }
+        }
+        stage('Test') {
+            agent  { docker 'node:latest' }
+            steps {
+                /* echo 'Testing..'
+                echo 'Hello, NodeApp' */
+                sh 'npm run test'
+            }
+        }
+        stage('Image Build') {
+            steps {
+                echo 'Image in building....'
+                // 1- build une image
+                sh 'docker build -t nodeapp .'
+                // 2- connexion à dockerhub
+                sh 'docker login -u gkiori -p Fargier11'
+                // 3- tag de l image
+                sh 'docker tag nodeapp:latest gkiori/nodeapp:1.2.0'
+                // 4- push de l image
+                sh 'docker push gkiori/nodeapp:1.2.0'
+            }
+        }
+    }
+}
