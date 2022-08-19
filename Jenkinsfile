@@ -28,8 +28,11 @@ pipeline {
                 // 1- build une image
                 sh 'docker build -t nodeapp .'
                 // 2- connexion à dockerhub
+                sh 'docker login -u gkiori -p Fargier11'
                 // 3- tag de l image
+                sh 'docker tag nodeapp:latest gkiori/nodeapp:1.1.0'
                 // 4- push de l image
+                sh 'docker push gkiori/nodeapp:1.1.0'
             }
         }
     }
