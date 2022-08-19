@@ -22,10 +22,14 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
+        stage('Image Build') {
             steps {
-                echo 'Deploying....'
-
+                echo 'Image in building....'
+                // 1- build une image
+                sh 'docker build -t nodeapp .'
+                // 2- connexion à dockerhub
+                // 3- tag de l image
+                // 4- push de l image
             }
         }
     }
