@@ -9,7 +9,7 @@ pipeline {
                 echo 'Hello, NodeJS'
                 sh 'node --version'
                 sh 'npm --version'
-                sh 'npm install -g mocha && npm install'
+                sh 'npm install -save-dev mocha && npm install'
             }
         }
         stage('Test') {
