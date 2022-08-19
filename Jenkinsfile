@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
-                echo 'Hello, NodeApp'
+                /* echo 'Building..'
+                echo 'Hello, NodeApp' */
                 nodejs('NodeJS') {
                     sh 'node --version'
                     sh 'npm --version'
@@ -15,12 +15,11 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
-                echo 'Hello, NodeApp'
+                /* echo 'Testing..'
+                echo 'Hello, NodeApp' */
                 nodejs('NodeJS') {
                     sh 'node run test'
                 }
-
             }
         }
         stage('Deploy') {
