@@ -1,5 +1,5 @@
-import {assert} from "chai/index.mjs";
-import {describe} from "mocha/lib/cli/run.js";
+import {chai} from "chai";
+var expect = chai.expect;
 
 describe('Simple Math Test', () => {
     it('should return 2', function () {
