@@ -18,7 +18,7 @@ pipeline {
                 /* echo 'Testing..'
                 echo 'Hello, NodeApp' */
                 nodejs('NodeJS') {
-                    sh 'node run test'
+                    sh 'npm run test'
                 }
             }
         }
